@@ -52,4 +52,4 @@ To run and use the application:
 
 ## Deployed Application
 
-[Number Guessing Game](https://gilmerperez.github.io/number-guesser/)
+[Number Guesser](https://gilmerperez.github.io/number-guesser/)
