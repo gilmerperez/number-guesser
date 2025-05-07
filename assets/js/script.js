@@ -16,7 +16,7 @@ minNumDisplay.textContent = minNum;
 maxNumDisplay.textContent = maxNum;
 
 // Get a random number
-const randomNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+const randomNumber = 20;
 
 function submit() {
   guess = inputField.value;
