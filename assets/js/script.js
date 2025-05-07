@@ -1,43 +1,60 @@
+// HTML DOM Elements
+const inputField = document.getElementById("inputField");
+const submitBtn = document.getElementById("submitBtn");
+const resultText = document.getElementById("resultText");
+const minNumDisplay = document.getElementById("minNum");
+const maxNumDisplay = document.getElementById("maxNum");
+
+// Variables
 let guess;
 let attempts = 0;
 const minNum = 0;
 const maxNum = 100;
 
-const text = document.getElementById("text");
-const input = document.getElementById("input");
-document.getElementById("minNum").textContent = minNum;
-document.getElementById("maxNum").textContent = maxNum;
+// Change HTML to match variable amount
+minNumDisplay.textContent = minNum;
+maxNumDisplay.textContent = maxNum;
+
+// Get a random number
 const randomNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 
 function submit() {
-  guess = input.value;
+  guess = inputField.value;
   if (isNaN(guess)) {
-    text.textContent = "ENTER A VALID NUMBER";
-    text.classList.add("wrongText");
-    input.value = "";
+    resultText.textContent = "ENTER A VALID NUMBER";
+    resultText.classList.remove("hidden");
+    resultText.classList.add("wrongText");
+    inputField.value = "";
   } else if (guess < minNum || guess > maxNum) {
-    text.textContent = "ENTER A NUMBER WITHIN THE RANGE";
-    text.classList.add("wrongText");
-    input.value = "";
+    resultText.textContent = "ENTER A NUMBER WITHIN THE RANGE";
+    resultText.classList.remove("hidden");
+    resultText.classList.add("wrongText");
+    inputField.value = "";
   } else {
     attempts++;
     if (guess < randomNumber) {
-      text.textContent = `TOO LOW! TRY AGAIN`;
-      text.classList.add("wrongText");
-      input.value = "";
+      resultText.textContent = `TOO LOW! TRY AGAIN`;
+      resultText.classList.remove("hidden");
+      resultText.classList.add("wrongText");
+      inputField.value = "";
     } else if (guess > randomNumber) {
-      text.textContent = "TOO HIGH! TRY AGAIN";
-      text.classList.add("wrongText");
-      input.value = "";
+      resultText.textContent = "TOO HIGH! TRY AGAIN";
+      resultText.classList.remove("hidden");
+      resultText.classList.add("wrongText");
+      inputField.value = "";
     } else {
-      text.textContent = `CORRECT! THE NUMBER WAS ${randomNumber}! IT TOOK YOU ${attempts} ATTEMPTS`;
-      text.classList.add("correctText");
+      resultText.textContent = `CORRECT! THE NUMBER WAS ${randomNumber}! IT TOOK YOU ${attempts} ATTEMPTS`;
+      resultText.classList.remove("hidden");
+      resultText.classList.add("correctText");
     }
   }
 }
 
-input.addEventListener("keydown", function (event) {
+// Listen for the "Enter" key on the inputField as well
+inputField.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     submit();
   }
 });
+
+submitBtn.addEventListener("click", submit);
