@@ -1,8 +1,8 @@
-# Number Guessing Game
+# Number Guesser
 
 ## Project Summary
 
-Number Guessing Game is a simple, interactive web app where users try to guess a randomly generated number within a set range. It provides instant feedback, tracks attempts, and displays a congratulatory message when the correct number is guessed.
+Number Guesser is a simple, interactive web app where users try to guess a randomly generated number within a set range. It provides instant feedback, tracks attempts, and displays a congratulatory message when the correct number is guessed.
 
 Built with vanilla HTML, CSS, and JavaScript, the app demonstrates the power of core web technologies without external frameworks. Its clean, responsive design ensures a smooth experience across all device sizes.
 
@@ -52,4 +52,4 @@ To run and use the application:
 
 ## Deployed Application
 
-[Number Guessing Game](https://gilmerperez.github.io/number-guessing-game/)
+[Number Guessing Game](https://gilmerperez.github.io/number-guesser/)
